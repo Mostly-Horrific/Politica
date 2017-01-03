@@ -12,7 +12,7 @@ namespace Politica
     {
         public void Configuration(IAppBuilder app)
         {
-            ConfigureAuth(app);
+            //Todo: Some stuff
         }
     }
 }
