@@ -1,38 +1,33 @@
-    var rendererType = "WebGL"
-    if(!PIXI.utils.isWebGLSupported()){
+var rendererType = "WebGL"
+var stageWidth = 900;
+var stageHeight = 768;
+var backgroundColour = 0x4483FF;
+
+if(!PIXI.utils.isWebGLSupported()){
       rendererType = "canvas"
     }
 
-    PIXI.utils.sayHello(rendererType)
+PIXI.utils.sayHello(rendererType)
 
-//Create the renderer
-var renderer = PIXI.autoDetectRenderer(1024,768);
-renderer.autoResize = true;
-renderer.view.style.border = "1px dashed black";
-renderer.backgroundColor = 0x061639;
-//Add the canvas to the HTML document
-document.body.appendChild(renderer.view);
-var stage = new PIXI.Container();
-PIXI.loader
-  .add("images/tickbox.png")
-  .add("images/darkliahoslogo.png")
-  .add("images/politica.png")
-  .load(setup);
+var app = new PIXI.Application(stageWidth, stageHeight, {backgroundColor : backgroundColour});
+document.body.appendChild(app.view);
 
-  function setup(){
-      var tickbox = new PIXI.Sprite(PIXI.loader.resources["images/tickbox.png"].texture);
-      tickbox.x = (renderer.screen.right /2) - (tickbox.width/2);
-      tickbox.y = (renderer.screen.bottom /2) - (tickbox.height/2) - 50;
+  var fileInput = 'data/cities.txt';
+    $.get(fileInput).done(
+    function (data) {
+      var cityIndex = Math.floor(Math.random() * (data.length - 1)) + 1;
+      var cities = data.split('\n');
+      var cityName = cities[cityIndex - 1];
+    var textSample = new PIXI.Text(cityName, {
+        fontFamily: 'Arial',
+        fontSize: 35,
+        fill: 'white', 
+        align : 'center'
+    });
+    textSample.position.set(400, 30);
 
-      var logo = new PIXI.Sprite(PIXI.loader.resources["images/darkliahoslogo.png"].texture);
-      logo.x = (renderer.screen.right /9);
-      logo.y = (renderer.screen.bottom /2);
+app.stage.addChild(textSample);
 
-      stage.addChild(tickbox);
-      stage.addChild(logo);
-      renderer.render(stage);
-
-  }
-
+    });
 
 
