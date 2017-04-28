@@ -1,33 +1,34 @@
-var rendererType = "WebGL"
-var stageWidth = 900;
-var stageHeight = 768;
-var backgroundColour = 0x4483FF;
+var Container = PIXI.Container, 
+    autoDetectRenderer = PIXI.autoDetectRenderer,
+    loader = PIXI.loader,
+    resources = PIXI.loader.resources,
+    TextureCache = PIXI.utils.TextureCache,
+    Sprite = PIXI.Sprite;
+    Rectangle = PIXI.Rectangle;
 
-if(!PIXI.utils.isWebGLSupported()){
-      rendererType = "canvas"
+    var stage = new Container(),
+    renderer = autoDetectRenderer(512,512);
+    document.body.appendChild(renderer.view);
+
+    loader.add("images/citytileset.png")
+            .on("progress", loadProgressHandler).load(setup);
+
+function loadProgressHandler(loader, resource){
+    //TODO: Some logging here
+}
+
+function setup(){
+    var tileSet = TextureCache['images/citytileset.png'];
+    var rectangle = new Rectangle(32, 0, 32, 32);
+    tileSet.frame = rectangle;
+
+    for(i = 0; i < 512; i++){
+        var grassBlock = new Sprite(tileSet);
+    grassBlock.x = i * 32;
+    grassBlock.y = 32;
+    stage.addChild(grassBlock);
     }
 
-PIXI.utils.sayHello(rendererType)
 
-var app = new PIXI.Application(stageWidth, stageHeight, {backgroundColor : backgroundColour});
-document.body.appendChild(app.view);
-
-  var fileInput = 'data/cities.txt';
-    $.get(fileInput).done(
-    function (data) {
-      var cityIndex = Math.floor(Math.random() * (data.length - 1)) + 1;
-      var cities = data.split('\n');
-      var cityName = cities[cityIndex - 1];
-    var textSample = new PIXI.Text(cityName, {
-        fontFamily: 'Arial',
-        fontSize: 35,
-        fill: 'white', 
-        align : 'center'
-    });
-    textSample.position.set(400, 30);
-
-app.stage.addChild(textSample);
-
-    });
-
-
+    renderer.render(stage); 
+}
