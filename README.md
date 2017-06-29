@@ -1,5 +1,5 @@
 # Politica
-Something I have wanted to make for a long time (Yep that is purposely vauge)
+A game for the total political buff, go from a city mayor to the leader of a great nation in one pint sized games. 
 
 #Running Politica
 
