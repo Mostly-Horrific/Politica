@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'sematarymedium';
+    src: url('../fonts/sematary-webfont.woff2') format('woff2'),
+         url('../fonts/sematary-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+#test{
+    font-family: 'sematarymedium';
+    font-size: 56px;
+}
