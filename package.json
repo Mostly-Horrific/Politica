@@ -1,12 +1,16 @@
 {
-    "name": "Politca",
-    "version": "1.0.0",
-    "description": "A proof of concept",
-    "main": "index.js",
-    "scripts": {
-      "start": "electron main.js"
-    },
-    "author": "Sohail Nasir",
-    "license": "ISC"
+  "name": "Politca",
+  "version": "1.0.0",
+  "description": "A proof of concept",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "author": "Sohail Nasir",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chai": "^4.0.4",
+    "@types/mocha": "^2.2.43",
+    "typings": "^2.1.1"
   }
-  
+}
