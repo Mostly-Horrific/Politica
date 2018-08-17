@@ -32,14 +32,17 @@ function SetUpTitle(gameObject: GameEngine){
 
 function InitStartGameScreen(gameObject: GameEngine){
     gameObject.screenCanvasContext.clearRect(0, 0, gameObject.screenCanvas.width, gameObject.screenCanvas.height);
-    alert('If I could be bothered to do anything, this would be awesome indeed');
     gameObject.gameState = GameState.IntroScreen;
-    alert(gameObject.gameState);
+    
 }
 
 function keyBoardInput(event: KeyboardEvent, gameEngineObject: GameEngine){
     if(event.keyCode == 32){
-        InitStartGameScreen(gameEngineObject);
+        if(gameEngineObject.gameState == GameState.Title){
+            InitStartGameScreen(gameEngineObject);
+            
+        }
+        
     }
     if(event.keyCode == 8){
         SetUpTitle(gameEngineObject);
