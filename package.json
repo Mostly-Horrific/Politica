@@ -9,10 +9,11 @@
   "author": "Sohail Nasir",
   "license": "ISC",
   "devDependencies": {
-    "electron": "2.0.0",
+    "electron": "2.0.9",
     "typings": "^2.1.1"
   },
   "dependencies": {
-    "phaser": "^3.11.0"
+    "phaser": "^3.11.0",
+    "electron": "2.0.9"
   }
 }
