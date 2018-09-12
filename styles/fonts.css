@@ -7,7 +7,21 @@
 
 }
 
+@font-face {
+    font-family: 'digitalreadout';
+    src: url('../fonts/SFDigitalReadout-MediumObli.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 #test{
     font-family: 'sematarymedium';
     font-size: 56px;
 }
+
+.readout{
+    font-family: 'digitalreadout';
+    font-size: 26px;
+}
+

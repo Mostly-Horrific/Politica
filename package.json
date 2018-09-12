@@ -9,9 +9,8 @@
   "author": "Sohail Nasir",
   "license": "ISC",
   "devDependencies": {
-    "@types/chai": "^4.0.4",
-    "@types/mocha": "^2.2.43",
     "electron": "2.0.0",
     "typings": "^2.1.1"
-  }
+  },
+  "dependencies": {}
 }

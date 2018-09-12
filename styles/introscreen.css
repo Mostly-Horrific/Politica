@@ -1,0 +1,11 @@
+body{
+    background-color: #000000;
+    border: 4px white;
+    color: #2c9904;
+}
+
+.hiddenBox{
+    background-color: #000000;
+    color: #2c9904;
+    border:none;
+}

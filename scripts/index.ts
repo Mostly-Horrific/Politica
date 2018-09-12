@@ -31,10 +31,13 @@ function SetUpTitle(gameObject: GameEngine){
 }
 
 function InitStartGameScreen(gameObject: GameEngine){
-    gameObject.screenCanvasContext.clearRect(0, 0, gameObject.screenCanvas.width, gameObject.screenCanvas.height);
-    alert('If I could be bothered to do anything, this would be awesome indeed');
+    gameObject.screenCanvas.hidden = true;
+    location.href = `file://${__dirname}/introscreen.html`
+
+    
     gameObject.gameState = GameState.IntroScreen;
-    alert(gameObject.gameState);
+
+    
 }
 
 function keyBoardInput(event: KeyboardEvent, gameEngineObject: GameEngine){
