@@ -31,17 +31,12 @@ function SetUpTitle(gameObject: GameEngine){
 }
 
 function InitStartGameScreen(gameObject: GameEngine){
-<<<<<<< HEAD
     gameObject.screenCanvas.hidden = true;
     location.href = `file://${__dirname}/introscreen.html`
 
     
     gameObject.gameState = GameState.IntroScreen;
 
-=======
-    gameObject.screenCanvasContext.clearRect(0, 0, gameObject.screenCanvas.width, gameObject.screenCanvas.height);
-    gameObject.gameState = GameState.IntroScreen;
->>>>>>> b835f69b6cc040321d7171246643b259017cd7fa
     
 }
 
