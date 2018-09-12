@@ -1,5 +1,5 @@
 {
-  "name": "Politca",
+  "name": "politca",
   "version": "1.0.0",
   "description": "A proof of concept",
   "main": "index.js",
@@ -12,5 +12,11 @@
     "electron": "2.0.0",
     "typings": "^2.1.1"
   },
+<<<<<<< HEAD
   "dependencies": {}
+=======
+  "dependencies": {
+    "phaser": "^3.11.0"
+  }
+>>>>>>> b835f69b6cc040321d7171246643b259017cd7fa
 }
