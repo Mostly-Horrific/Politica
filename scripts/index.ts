@@ -12,7 +12,8 @@ class GameEngine{
 
 enum GameState {
     Title,
-    IntroScreen
+    IntroScreen,
+    Map
 }
 
 function SetUpTitle(gameObject: GameEngine){
@@ -32,7 +33,7 @@ function SetUpTitle(gameObject: GameEngine){
 
 function InitStartGameScreen(gameObject: GameEngine){
     gameObject.screenCanvas.hidden = true;
-    location.href = `file://${__dirname}/introscreen.html`
+    location.href = `file://${__dirname}/citymap.html`
 
     
     gameObject.gameState = GameState.IntroScreen;
