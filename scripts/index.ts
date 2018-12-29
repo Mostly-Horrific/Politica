@@ -18,15 +18,13 @@ enum GameState {
 }
 
 function SetUpTitle(gameObject: GameEngine){
-    var titleImage: HTMLImageElement;
     this.titleImage = new Image();
     this.titleImage.src = "images/globetitle.jpg";
     
     this.titleImage.onload = ()=> {
         gameObject.screenCanvasContext.drawImage(this.titleImage, 0, 25, 800, 680);
         gameObject.screenCanvasContext.font = '28px sematarymedium';
-        gameObject.screenCanvasContext.fillStyle = 'yellow';
-        gameObject.screenCanvasContext.fillText('POLITICA', 290, 50);    
+        gameObject.screenCanvasContext.fillStyle = 'black';
         gameObject.screenCanvasContext.fillText('Press Space to start', 242, 350);    
     }
     gameObject.gameState = GameState.Title;
@@ -34,7 +32,7 @@ function SetUpTitle(gameObject: GameEngine){
 
 function InitStartGameScreen(gameObject: GameEngine){
     gameObject.screenCanvas.hidden = true;
-    location.href = `file://${__dirname}/citymap.html`
+    location.href = `file://${__dirname}/introscreen.html`
 
     
     gameObject.gameState = GameState.IntroScreen;
