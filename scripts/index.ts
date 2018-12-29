@@ -13,7 +13,8 @@ class GameEngine{
 enum GameState {
     Title,
     IntroScreen,
-    Map
+    Map,
+    Newspaper
 }
 
 function SetUpTitle(gameObject: GameEngine){
