@@ -2,11 +2,27 @@
         <link rel="stylesheet" href="styles/fonts.css"/>
         <link rel="stylesheet" href="styles/introscreen.css"/>
     <body class="readout">
+	<h3>Candiate form v0.01</h3>
         <p></p>
-        <p>Enter your full name? [Press Enter to Complete].</p>
+        <p>Enter your full name?</p>
         <input id="name" class="readout hiddenBox"/>
-        <p>Great! What is the name of your political party?</p>
-        <input class="readout hiddenBox"/>
+        <p>What party are you running for?</p>
+		<select name="party" id="party" class="hiddenCombo">
+		  <option value="democrat">Democrat</option>
+		  <option value="republican">Republican</option>
+		  <option value="independent">Independent</option>
+		</select>
+		<p>What you running as?</p>
+		<select name="job" id="job" class="hiddenCombo">
+		  <option value="mayor">Mayor</option>
+		  <option value="representative">Representative</option>
+		  <option value="senator">Senator</option>
+		  <option value="president">President</option>
+		</select>
+		<p>What year you running in?</p>
+        <input id="year" type="number"max="9999" class="readout hiddenBox"/>
+		<p></p>
+		<button class="hiddenButton">Start</button>
     </body>
     <script src="scripts/index.js"></script>
 </html>
