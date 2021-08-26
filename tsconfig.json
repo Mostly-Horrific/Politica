@@ -2,6 +2,9 @@
     "compilerOptions": {
         "module": "commonjs",
         "removeComments": true,
-        "sourceMap": true
+        "sourceMap": true,
+        "isolatedModules": false,
+        "noFallthroughCasesInSwitch": true,
+        "allowSyntheticDefaultImports": true,
     }
 }
