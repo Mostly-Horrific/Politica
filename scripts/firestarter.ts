@@ -1,11 +1,42 @@
+import { ICandidate, IPolitcalCompass } from "./election";
+import { IIssue } from "./models/Issues";
+
 export function fireStarter(gamePayLoad: IGamePayload){
 	let player = createCandidate(gamePayLoad.name, gamePayLoad.politicalParty);
 	
-	//TODO
-	
 	// Create opponents
+	let opponents: ICandidate[]
+
+	opponents.push(createCandidate('Bob Smith', "Democrat"))
+	opponents.push(createCandidate('Joe Plumber', "Republican"))
+	opponents.push(createCandidate('Dan Singh', "Idependent"))
 	
 	// Create Generic Issues 
+	let issues: IIssue[];
+
+	issues.push({
+		appeasmentBias: null,
+		name: 'fix pothole on main street',
+		priority: 100, 
+		popularity: 100,
+		expiryCondition: {
+			property: 'mainRoadCondition',
+			comparittor: 'over',
+			value: 90
+		}
+	})
+
+	issues.push({
+		appeasmentBias: null,
+		name: 'clean toilets',
+		priority: 100, 
+		popularity: 100,
+		expiryCondition: {
+			property: 'toiletCleansiness',
+			comparittor: 'over',
+			value: 50
+		}
+	})
 	
 	// Create Generic mayoral platform (Fictional USA town as the generic Model)
 	// TODO: other campaigns will be setup
@@ -13,19 +44,20 @@ export function fireStarter(gamePayLoad: IGamePayload){
 	// Then navigate to campaign setup screen
 }
 
-function createCandidate:Candidate(name: string, politicalParty: string){
-	return{
+function createCandidate (name: string, politicalParty: string): ICandidate{
+	return {
 		name: name,
 		politicalParty: politicalParty,
+		dateOfBirth: new Date(1950, 1, 1), //TODO Support entering this
 		bio: 'Someone starting out', // TODO: We need to support entering of this
-		politcalCompassValues: generateGenericCompassValues(politicalParty), //these are just to get the game playable for now
-		pastResults: [].
+		politicalCompassValues: generateGenericCompassValues(politicalParty), //these are just to get the game playable for now
+		pastResults: [],
 		politicalPositions:[]
 	}
 }
 
-function generateGenericCompassValues(politicalParty: string){
-	switch(politicalParty.toLower
+function generateGenericCompassValues(politicalParty: string): IPolitcalCompass{
+	switch(politicalParty.toLowerCase()){
 	// these are based on 2020 presidential candidates (Maybe not the greatest indicator)
 		case 'democrat':
 			return {
@@ -48,8 +80,8 @@ function generateGenericCompassValues(politicalParty: string){
 				left: 0,
 				libetarian: 0
 			}
+		}
 	}
-}
 
 export interface IGamePayload{
 	name: string;
