@@ -1,41 +1,36 @@
-class Candidate{
-    public Name:string;
-    public PoliticalParty:string;
-    public DateOfBirth:Date;
-    public Bio:string;
-    public PoliticalCompassValues:PolitcalCompass
-    public PastResults: Array<PolitcalResult>;
-    public PoliticalPositions:Array<PoliticalPositions>;
+// TODO: Once we have a git client running, rename to candiate and move to models
+
+export interface ICandidate{
+    name:string;
+    politicalParty:string;
+    dateOfBirth: Date;
+    bio:string;
+    politicalCompassValues: IPolitcalCompass
+    pastResults: Array<IPolitcalResult> | [];
+    politicalPositions:Array<IPoliticalPositions>| [];
 }
 
-class PolitcalCompass{
-    public Authoritarian:number;
-    public Libetarian:number;
-    public Left:number;
-    public right:number;
+export interface IPolitcalCompass{
+    authoritarian:number;
+    libetarian:number;
+    left:number;
+    right:number;
 }
 
-class PoliticalPositions{
-    public Issue: string
-    public Sector: string
-    public LeftValue:number;
-    public RightValue:number;
+export interface IPoliticalPositions{
+    issue: string
+    sector: string
+    leftValue:number;
+    rightValue:number;
 }
 
-class PolitcalResult{
-    public Year:number;
-    public Month:number;
-    public ByElection:boolean;
-    public SwingPercentage: number;
-    public Votes:number;
-    public PoliticalParty:string;
-    public WasIncumbant:boolean;
-    public WasVictory:boolean;
+export interface IPolitcalResult{
+    year:number;
+    month:number;
+    byElection:boolean;
+    swingPercentage: number;
+    votes:number;
+    politicalParty:string;
+    wasIncumbant:boolean;
+    wasVictory:boolean;
 }
-
-
-export function calculateSwing(){
-    return 300;
-}
-
-export default calculateSwing;
