@@ -1,5 +1,3 @@
-// TODO: Once we have a git client running, rename to candiate and move to models
-
 export interface ICandidate{
     name:string;
     politicalParty:string;

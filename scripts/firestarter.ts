@@ -1,4 +1,4 @@
-import { ICandidate, IPolitcalCompass } from "./election";
+import { ICandidate, IPolitcalCompass } from "./models/candidate";
 import { IIssue } from "./models/Issues";
 
 export function fireStarter(gamePayLoad: IGamePayload){
@@ -9,7 +9,7 @@ export function fireStarter(gamePayLoad: IGamePayload){
 
 	opponents.push(createCandidate('Bob Smith', "Democrat"))
 	opponents.push(createCandidate('Joe Plumber', "Republican"))
-	opponents.push(createCandidate('Dan Singh', "Idependent"))
+	opponents.push(createCandidate('Dan Singh', "Independent"))
 	
 	// Create Generic Issues 
 	let issues: IIssue[];

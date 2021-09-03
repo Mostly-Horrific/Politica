@@ -1,4 +1,4 @@
-import { IPolitcalCompass } from "../election";
+import { IPolitcalCompass } from "./candidate";
 
 export interface IIssue{
     name: string
