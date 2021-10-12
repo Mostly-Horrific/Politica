@@ -9,12 +9,12 @@
   "author": "Sohail Nasir",
   "license": "ISC",
   "devDependencies": {
-    "electron": "2.0.9",
+    "electron": "11.5.0",
     "typings": "^2.1.1"
   },
   "dependencies": {
     "@types/imagemapster": "^1.2.8",
-    "electron": "2.0.9",
+    "electron": "11.5.0",
     "npm": "^6.4.1"
   }
 }
